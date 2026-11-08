@@ -1,0 +1,218 @@
+---
+import Layout from "../layouts/Layout.astro";
+import BlobBackdrop from "../components/BlobBackdrop.astro";
+import PhoneMockup from "../components/PhoneMockup.astro";
+import JarIllustration from "../components/icons/JarIllustration.astro";
+import CalendarIllustration from "../components/icons/CalendarIllustration.astro";
+import FeatureIcon from "../components/FeatureIcon.astro";
+
+// TODO: swap once billsteady-web is deployed to Cloudflare Pages. Pointed at
+// the public repo for now - a real, working link, not a dead stub.
+const APP_URL = "https://github.com/BillSteady/billsteady-web";
+
+const steps = [
+  {
+    title: "Add your bills and payday",
+    body: "Rent, school fees, DisCo, data — whatever's due, and when you actually get paid.",
+  },
+  {
+    title: "See what's short, before you're short",
+    body: "A 35-day running balance shows exactly which bills are at risk, in under a minute.",
+  },
+  {
+    title: "Save a little, every day",
+    body: "A daily target as low as ₦100, so a ₦20,000 bill never feels like a scramble.",
+  },
+  {
+    title: "Pay from what you've saved",
+    body: "By the time it's due, it's already covered — no loans, no last-minute panic.",
+  },
+];
+
+const trustPoints = [
+  {
+    icon: "no-lending" as const,
+    title: "No lending, ever",
+    body: "We never offer loans, credit lines, or buy-now-pay-later. Every bill is paid from money you've actually saved.",
+  },
+  {
+    icon: "no-bank-login" as const,
+    title: "We never ask for your bank login",
+    body: "Nothing to type in, nothing for anyone to steal. Your bank account stays yours alone.",
+  },
+  {
+    icon: "no-crypto" as const,
+    title: "Works entirely in naira",
+    body: "No wallets, no tokens, nothing to figure out. If that ever changes, it'll be optional — never required.",
+  },
+  {
+    icon: "daily-save" as const,
+    title: "Small daily amounts, not scary lump sums",
+    body: "Save from ₦100 a day instead of finding ₦20,000 all at once on the day it's due.",
+  },
+];
+---
+
+<Layout>
+  <!-- Nav -->
+  <header class="sticky top-0 z-20 border-b border-brand-100/70 bg-cream/90 backdrop-blur">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-5 py-3">
+      <a href="#top" class="flex items-center gap-2">
+        <div class="flex h-8 w-8 items-center justify-center rounded-xl bg-brand-600 text-sm font-extrabold text-white">
+          B
+        </div>
+        <span class="text-lg font-extrabold text-brand-700">BillSteady</span>
+      </a>
+      <nav class="hidden items-center gap-8 text-sm font-semibold text-stone-600 sm:flex">
+        <a href="#how-it-works" class="hover:text-brand-700">How it works</a>
+        <a href="#trust" class="hover:text-brand-700">Why it's safe</a>
+      </nav>
+      <a
+        href={APP_URL}
+        class="rounded-full bg-brand-600 px-5 py-2.5 text-sm font-bold text-white shadow-soft transition-transform hover:bg-brand-700 active:scale-95"
+      >
+        Try it free
+      </a>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Hero -->
+    <section class="relative overflow-hidden px-5 pt-14 sm:pt-20">
+      <BlobBackdrop class="-right-40 -top-40 h-[560px] w-[560px] sm:-right-20" />
+      <div class="relative mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-2">
+        <div>
+          <p class="inline-flex items-center gap-2 rounded-full bg-brand-100 px-4 py-1.5 text-xs font-bold text-brand-700">
+            Now in Nigeria &middot; free, no crypto needed
+          </p>
+          <h1 class="mt-5 text-4xl font-extrabold leading-[1.1] text-stone-900 sm:text-5xl lg:text-[3.25rem]">
+            Pay every bill on time, even when payday doesn't line up.
+          </h1>
+          <p class="mt-5 max-w-lg text-lg text-stone-600">
+            BillSteady shows you which bills are at risk before payday, then helps you save a little
+            each day so you're never caught short. No bank login. No crypto. No lending.
+          </p>
+          <div class="mt-8 flex flex-wrap items-center gap-4">
+            <a
+              href={APP_URL}
+              class="rounded-full bg-brand-600 px-7 py-3.5 text-base font-bold text-white shadow-soft transition-transform hover:bg-brand-700 active:scale-95"
+            >
+              Try the planner &mdash; free
+            </a>
+            <a href="#how-it-works" class="text-base font-bold text-brand-700 hover:text-brand-800">
+              See how it works &rarr;
+            </a>
+          </div>
+          <p class="mt-4 text-sm text-stone-500">No signup required to try the planner.</p>
+        </div>
+        <div class="relative">
+          <PhoneMockup />
+        </div>
+      </div>
+    </section>
+
+    <!-- Problem -->
+    <section class="mx-auto mt-24 max-w-4xl px-5 text-center sm:mt-32">
+      <h2 class="text-3xl font-extrabold text-stone-900 sm:text-4xl">Bills don't wait for payday.</h2>
+      <div class="mt-8 grid gap-6 text-left sm:grid-cols-2">
+        <p class="rounded-2xl bg-white p-5 text-stone-600 shadow-sm">
+          Income is often irregular, or lands after the due date &mdash; but rent, school fees and DisCo bills
+          don't move.
+        </p>
+        <p class="rounded-2xl bg-white p-5 text-stone-600 shadow-sm">
+          A lump sum hurts far more than small daily amounts would, if only there were a plan to split it up.
+        </p>
+        <p class="rounded-2xl bg-white p-5 text-stone-600 shadow-sm">
+          Naira savings lose value over time, and saving in dollars has felt out of reach for most people.
+        </p>
+        <p class="rounded-2xl bg-white p-5 text-stone-600 shadow-sm">
+          Apps that ask for a bank login feel risky &mdash; and when a bill can't be paid, most people don't
+          know how to ask for time.
+        </p>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section id="how-it-works" class="relative mx-auto mt-24 max-w-6xl overflow-hidden px-5 sm:mt-32">
+      <BlobBackdrop class="-left-52 top-20 h-[520px] w-[520px]" />
+      <div class="relative text-center">
+        <h2 class="text-3xl font-extrabold text-stone-900 sm:text-4xl">How BillSteady works</h2>
+        <p class="mx-auto mt-3 max-w-xl text-stone-600">Four steps. No spreadsheets, no guesswork.</p>
+      </div>
+      <div class="relative mt-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+        {
+          steps.map((step, i) => (
+            <div class="rounded-2xl bg-white p-6 text-center shadow-soft">
+              <div class="mx-auto flex h-10 w-10 items-center justify-center rounded-full bg-sunrise-400 text-sm font-extrabold text-white">
+                {i + 1}
+              </div>
+              <h3 class="mt-4 text-lg font-bold text-stone-900">{step.title}</h3>
+              <p class="mt-2 text-sm text-stone-600">{step.body}</p>
+            </div>
+          ))
+        }
+      </div>
+      <div class="relative mt-16 grid items-center gap-10 lg:grid-cols-2">
+        <div class="mx-auto w-full max-w-sm rounded-2xl bg-white p-8 shadow-soft">
+          <CalendarIllustration class="mx-auto h-48 w-48" />
+        </div>
+        <div class="mx-auto w-full max-w-sm rounded-2xl bg-white p-8 shadow-soft">
+          <JarIllustration class="mx-auto h-48 w-48" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust -->
+    <section id="trust" class="mx-auto mt-24 max-w-6xl px-5 sm:mt-32">
+      <div class="text-center">
+        <h2 class="text-3xl font-extrabold text-stone-900 sm:text-4xl">Built so there's nothing to worry about</h2>
+        <p class="mx-auto mt-3 max-w-xl text-stone-600">
+          BillSteady doesn't lend and doesn't create money. Every bill is paid from money you've actually saved.
+        </p>
+      </div>
+      <div class="mt-12 grid gap-6 sm:grid-cols-2">
+        {
+          trustPoints.map((point) => (
+            <div class="flex gap-4 rounded-2xl bg-brand-50/60 p-6">
+              <div class="flex h-14 w-14 flex-none items-center justify-center rounded-xl bg-white shadow-sm">
+                <FeatureIcon name={point.icon} />
+              </div>
+              <div>
+                <h3 class="font-bold text-stone-900">{point.title}</h3>
+                <p class="mt-1 text-sm text-stone-600">{point.body}</p>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </section>
+
+    <!-- CTA footer -->
+    <section class="relative mx-auto mt-24 max-w-5xl overflow-hidden rounded-[2.5rem] bg-brand-700 px-8 py-16 text-center sm:mt-32 sm:px-16">
+      <BlobBackdrop class="-bottom-40 -right-40 h-[480px] w-[480px] opacity-30" />
+      <div class="relative">
+        <h2 class="text-3xl font-extrabold text-white sm:text-4xl">Start planning your bills today</h2>
+        <p class="mx-auto mt-4 max-w-md text-brand-100">
+          Free for the naira planner, forever. No signup, no bank login, no crypto required.
+        </p>
+        <a
+          href={APP_URL}
+          class="mt-8 inline-block rounded-full bg-sunrise-400 px-8 py-3.5 text-base font-bold text-stone-900 shadow-soft-sunrise transition-transform hover:bg-sunrise-500 active:scale-95"
+        >
+          Try the planner &mdash; free
+        </a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="mx-auto mt-20 max-w-6xl px-5 pb-10 pt-8 text-center text-sm text-stone-500">
+      <p>BillSteady &middot; Nigeria, then Kenya and Ghana.</p>
+      <p class="mt-2">
+        Built in the open &mdash;
+        <a href="https://github.com/BillSteady" class="font-semibold text-brand-700 hover:underline">
+          github.com/BillSteady
+        </a>
+      </p>
+    </footer>
+  </main>
+</Layout>

@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+/*
+  Visual direction: "Sunrise Teal"
+  Warm consumer-fintech optimism (Wise/Revolut-style friendliness) built on
+  BillSteady's existing brand teal, so the landing page and the live app
+  read as one product, not two. One accent only (sunrise amber), warm cream
+  backgrounds instead of stark white, large radii, soft colored shadows
+  instead of gray ones, flat line-art illustrations instead of photography
+  (no stock photos of people who don't look like the audience).
+*/
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+
+  --color-brand-50: #f0fdfa;
+  --color-brand-100: #ccfbf1;
+  --color-brand-200: #99f6e4;
+  --color-brand-300: #5eead4;
+  --color-brand-500: #14b8a6;
+  --color-brand-600: #0d9488;
+  --color-brand-700: #0f766e;
+  --color-brand-800: #115e59;
+  --color-brand-900: #134e4a;
+
+  /* The one accent: sunrise amber. Used sparingly - a highlight, never a
+     whole section background. */
+  --color-sunrise-100: #fef3c7;
+  --color-sunrise-400: #fbbf24;
+  --color-sunrise-500: #f59e0b;
+  --color-sunrise-600: #d97706;
+
+  /* Warm cream, not stark white - the "optimistic" half of the direction. */
+  --color-cream: #fffbf2;
+  --color-cream-100: #fff6e5;
+
+  --shadow-soft: 0 8px 24px -8px rgb(15 118 110 / 0.18);
+  --shadow-soft-sunrise: 0 8px 24px -8px rgb(217 119 6 / 0.22);
+}
+
+body {
+  @apply bg-cream text-stone-800;
+  font-feature-settings: "ss01" on;
+}

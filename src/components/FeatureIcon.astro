@@ -1,0 +1,45 @@
+---
+interface Props {
+  name: "no-lending" | "no-bank-login" | "no-crypto" | "daily-save";
+  class?: string;
+}
+const { name, class: className = "h-7 w-7" } = Astro.props;
+---
+
+{
+  name === "no-lending" && (
+    <svg class={className} viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="24" cy="24" r="20" stroke="var(--color-brand-700)" stroke-width="3" />
+      <path d="M16 20c0-3 3-5 6-5s6 2 6 5-3 4-6 5-6 2-6 5 3 5 6 5 6-2 6-5" stroke="var(--color-brand-700)" stroke-width="3" stroke-linecap="round" />
+      <line x1="12" y1="34" x2="36" y2="14" stroke="var(--color-sunrise-500)" stroke-width="3" stroke-linecap="round" />
+    </svg>
+  )
+}
+{
+  name === "no-bank-login" && (
+    <svg class={className} viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <rect x="12" y="21" width="24" height="18" rx="4" stroke="var(--color-brand-700)" stroke-width="3" />
+      <path d="M17 21v-5a7 7 0 0 1 14 0v5" stroke="var(--color-brand-700)" stroke-width="3" />
+      <circle cx="24" cy="28" r="2.5" fill="var(--color-brand-700)" />
+      <line x1="10" y1="36" x2="38" y2="10" stroke="var(--color-sunrise-500)" stroke-width="3" stroke-linecap="round" />
+    </svg>
+  )
+}
+{
+  name === "no-crypto" && (
+    <svg class={className} viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="24" cy="24" r="20" stroke="var(--color-brand-700)" stroke-width="3" />
+      <text x="24" y="31" font-size="20" text-anchor="middle" fill="var(--color-brand-700)" font-weight="700">&#8358;</text>
+    </svg>
+  )
+}
+{
+  name === "daily-save" && (
+    <svg class={className} viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M10 38V18l14-10 14 10v20" stroke="var(--color-brand-700)" stroke-width="3" stroke-linejoin="round" />
+      <path d="M18 38V26h12v12" stroke="var(--color-brand-700)" stroke-width="3" stroke-linejoin="round" />
+      <circle cx="33" cy="15" r="7" fill="var(--color-sunrise-400)" stroke="var(--color-sunrise-600)" stroke-width="2" />
+      <path d="M30 15l2 2 4-4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+  )
+}

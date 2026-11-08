@@ -1,0 +1,71 @@
+---
+// A hand-built mockup of the real Planner screen (see billsteady-web's
+// PlannerScreen.tsx) - not a screenshot, so it never goes stale, but the
+// content matches what the live app actually shows: a shortfall warning,
+// the running balance, and the bill timeline.
+---
+
+<div class="relative mx-auto w-[260px] select-none sm:w-[300px]">
+  <div class="rounded-[2.5rem] border-[8px] border-stone-900 bg-stone-900 shadow-soft">
+    <div class="overflow-hidden rounded-[2rem] bg-cream-100">
+      <!-- status bar -->
+      <div class="flex items-center justify-between px-5 pb-1 pt-3 text-[10px] font-semibold text-stone-800">
+        <span>9:41</span>
+        <span>●●●●</span>
+      </div>
+
+      <!-- header -->
+      <div class="flex items-center gap-2 border-b border-brand-100 bg-white px-4 py-3">
+        <div class="flex h-7 w-7 items-center justify-center rounded-lg bg-brand-600 text-sm font-bold text-white">B</div>
+        <div>
+          <p class="text-sm font-bold leading-tight text-brand-700">BillSteady</p>
+          <p class="text-[9px] text-stone-500">Plan ahead. Save daily.</p>
+        </div>
+      </div>
+
+      <!-- shortfall card -->
+      <div class="m-3 rounded-xl border-l-4 border-sunrise-500 bg-sunrise-100/70 p-3">
+        <p class="flex items-center gap-1 text-[11px] font-bold text-sunrise-600">
+          <span>&#9888;</span> Bills at risk before payday
+        </p>
+        <p class="mt-1 text-[10px] text-stone-700">Rent &middot; short &#8358;16,000 &middot; Nov 5</p>
+      </div>
+
+      <!-- balance card -->
+      <div class="mx-3 rounded-xl bg-white p-3 shadow-sm">
+        <p class="text-[9px] text-stone-500">Next 35 days, ending balance</p>
+        <p class="text-lg font-extrabold text-brand-700">&#8358;81,000</p>
+      </div>
+
+      <!-- timeline -->
+      <div class="m-3 space-y-2 rounded-xl bg-white p-3 shadow-sm">
+        {
+          [
+            { label: "Rent", date: "Nov 5", amount: "-₦17,000", tone: "text-stone-800" },
+            { label: "Payday", date: "Nov 28", amount: "+₦5,000", tone: "text-brand-600" },
+            { label: "School fees", date: "Dec 1", amount: "-₦50,000", tone: "text-stone-800" },
+          ].map((row) => (
+            <div class="flex items-center justify-between text-[10px]">
+              <div>
+                <p class="font-semibold text-stone-800">{row.label}</p>
+                <p class="text-stone-400">{row.date}</p>
+              </div>
+              <p class={`font-bold ${row.tone}`}>{row.amount}</p>
+            </div>
+          ))
+        }
+      </div>
+
+      <!-- tab bar -->
+      <div class="flex border-t border-brand-100 bg-white px-2 py-2">
+        {
+          ["Planner", "Bills", "Ask for time"].map((tab, i) => (
+            <div class={`flex-1 rounded-lg py-1 text-center text-[8px] font-semibold ${i === 0 ? "bg-brand-50 text-brand-700" : "text-stone-400"}`}>
+              {tab}
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</div>
