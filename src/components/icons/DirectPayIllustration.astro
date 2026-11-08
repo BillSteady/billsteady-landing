@@ -1,0 +1,46 @@
+---
+interface Props {
+  class?: string;
+}
+const { class: className = "" } = Astro.props;
+---
+
+<svg
+  class={className}
+  viewBox="0 0 220 200"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+  role="img"
+  aria-label="A direct, non-custodial payment from a wallet straight to a biller"
+>
+  <!-- wallet (source) -->
+  <rect x="10" y="78" width="60" height="44" rx="10" fill="white" stroke="var(--color-brand-700)" stroke-width="4" />
+  <circle cx="55" cy="100" r="5" fill="var(--color-brand-600)" />
+  <path d="M10 92h60" stroke="var(--color-brand-700)" stroke-width="3" />
+
+  <!-- arrow path -->
+  <path
+    d="M76 100 H150"
+    stroke="var(--color-sunrise-500)"
+    stroke-width="4"
+    stroke-dasharray="2 10"
+    stroke-linecap="round"
+  />
+  <path d="M142 90 L156 100 L142 110" stroke="var(--color-sunrise-500)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+
+  <!-- token riding the arrow -->
+  <circle cx="110" cy="100" r="14" fill="var(--color-sunrise-100)" stroke="var(--color-sunrise-600)" stroke-width="2.5" />
+  <text x="110" y="104" font-size="9" text-anchor="middle" fill="var(--color-sunrise-600)" font-weight="800">USDC</text>
+
+  <!-- biller building (destination) -->
+  <rect x="160" y="60" width="52" height="62" rx="6" fill="white" stroke="var(--color-brand-700)" stroke-width="4" />
+  <rect x="170" y="72" width="10" height="10" fill="var(--color-brand-200)" />
+  <rect x="188" y="72" width="10" height="10" fill="var(--color-brand-200)" />
+  <rect x="170" y="90" width="10" height="10" fill="var(--color-brand-200)" />
+  <rect x="188" y="90" width="10" height="10" fill="var(--color-brand-200)" />
+  <rect x="178" y="108" width="16" height="14" fill="var(--color-brand-600)" />
+
+  <!-- "no custody in between" label marker -->
+  <path d="M100 150 Q110 140 120 150" stroke="var(--color-brand-400, var(--color-brand-500))" stroke-width="2.5" stroke-linecap="round" fill="none" />
+  <circle cx="110" cy="140" r="3" fill="var(--color-brand-600)" />
+</svg>

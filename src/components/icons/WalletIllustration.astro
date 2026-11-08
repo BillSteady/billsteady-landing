@@ -1,0 +1,38 @@
+---
+interface Props {
+  class?: string;
+}
+const { class: className = "" } = Astro.props;
+---
+
+<svg
+  class={className}
+  viewBox="0 0 200 200"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+  role="img"
+  aria-label="A wallet holding XLM and USDC, in the user's own control"
+>
+  <ellipse cx="100" cy="178" rx="68" ry="8" fill="var(--color-brand-100)" />
+
+  <!-- wallet body -->
+  <rect x="34" y="55" width="132" height="95" rx="16" fill="white" stroke="var(--color-brand-700)" stroke-width="4" />
+  <path d="M34 80h132" stroke="var(--color-brand-700)" stroke-width="4" />
+  <rect x="120" y="95" width="34" height="24" rx="8" fill="var(--color-brand-600)" />
+  <circle cx="137" cy="107" r="4" fill="white" />
+
+  <!-- flap -->
+  <path d="M46 55 L100 30 L154 55" stroke="var(--color-brand-700)" stroke-width="4" stroke-linejoin="round" fill="var(--color-brand-100)" />
+
+  <!-- XLM token -->
+  <circle cx="68" cy="112" r="17" fill="var(--color-brand-100)" stroke="var(--color-brand-700)" stroke-width="3" />
+  <text x="68" y="118" font-size="12" text-anchor="middle" fill="var(--color-brand-700)" font-weight="800">XLM</text>
+
+  <!-- USDC token, slightly overlapping -->
+  <circle cx="92" cy="130" r="17" fill="var(--color-sunrise-100)" stroke="var(--color-sunrise-600)" stroke-width="3" />
+  <text x="92" y="134" font-size="10" text-anchor="middle" fill="var(--color-sunrise-600)" font-weight="800">USDC</text>
+
+  <!-- lock, signalling the user alone controls it -->
+  <rect x="88" y="10" width="24" height="18" rx="4" fill="var(--color-brand-700)" />
+  <path d="M92 10v-4a8 8 0 0 1 16 0v4" stroke="var(--color-brand-700)" stroke-width="3" fill="none" />
+</svg>

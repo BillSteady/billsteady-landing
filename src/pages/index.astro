@@ -2,8 +2,8 @@
 import Layout from "../layouts/Layout.astro";
 import BlobBackdrop from "../components/BlobBackdrop.astro";
 import PhoneMockup from "../components/PhoneMockup.astro";
-import JarIllustration from "../components/icons/JarIllustration.astro";
-import CalendarIllustration from "../components/icons/CalendarIllustration.astro";
+import WalletIllustration from "../components/icons/WalletIllustration.astro";
+import DirectPayIllustration from "../components/icons/DirectPayIllustration.astro";
 import FeatureIcon from "../components/FeatureIcon.astro";
 
 // TODO: swap once billsteady-web is deployed to Cloudflare Pages. Pointed at
@@ -12,43 +12,43 @@ const APP_URL = "https://github.com/BillSteady/billsteady-web";
 
 const steps = [
   {
-    title: "Add your bills and payday",
-    body: "Rent, school fees, DisCo, data — whatever's due, and when you actually get paid.",
+    title: "Connect your Stellar wallet",
+    body: "Freighter, Lobstr, xBull, or any Stellar wallet you already use. No new account, no seed phrase to copy down.",
   },
   {
-    title: "See what's short, before you're short",
-    body: "A 35-day running balance shows exactly which bills are at risk, in under a minute.",
+    title: "Pick a bill",
+    body: "Electricity, airtime, data, cable, school fees, a rent reference — real Nigerian billers.",
   },
   {
-    title: "Save a little, every day",
-    body: "A daily target as low as ₦100, so a ₦20,000 bill never feels like a scramble.",
+    title: "See the exact amount",
+    body: "In naira, and in XLM or USDC at today's rate — before you confirm anything.",
   },
   {
-    title: "Pay from what you've saved",
-    body: "By the time it's due, it's already covered — no loans, no last-minute panic.",
+    title: "Sign, and it's paid",
+    body: "Your wallet signs the transaction. Funds go straight to the biller. We never touch your money.",
   },
 ];
 
 const trustPoints = [
   {
-    icon: "no-lending" as const,
-    title: "No lending, ever",
-    body: "We never offer loans, credit lines, or buy-now-pay-later. Every bill is paid from money you've actually saved.",
+    icon: "non-custodial" as const,
+    title: "Non-custodial, always",
+    body: "Your wallet, your keys. BillSteady never holds your XLM or USDC — every payment is signed by you, on your device.",
   },
   {
-    icon: "no-bank-login" as const,
-    title: "We never ask for your bank login",
-    body: "Nothing to type in, nothing for anyone to steal. Your bank account stays yours alone.",
+    icon: "multi-asset" as const,
+    title: "Works with XLM and USDC",
+    body: "Hold either, or both. Pay with whichever you've got — no manual swapping first.",
   },
   {
-    icon: "no-crypto" as const,
-    title: "Works entirely in naira",
-    body: "No wallets, no tokens, nothing to figure out. If that ever changes, it'll be optional — never required.",
+    icon: "real-billers" as const,
+    title: "Real Nigerian billers",
+    body: "DisCo, airtime, data, cable, school fees — not a crypto-only experiment with nowhere to spend it.",
   },
   {
-    icon: "daily-save" as const,
-    title: "Small daily amounts, not scary lump sums",
-    body: "Save from ₦100 a day instead of finding ₦20,000 all at once on the day it's due.",
+    icon: "diaspora" as const,
+    title: "Built for two kinds of senders",
+    body: "Nigerians who already hold crypto, and family abroad sending support home — straight to a real bill, not just a wallet address.",
   },
 ];
 ---
@@ -71,7 +71,7 @@ const trustPoints = [
         href={APP_URL}
         class="rounded-full bg-brand-600 px-5 py-2.5 text-sm font-bold text-white shadow-soft transition-transform hover:bg-brand-700 active:scale-95"
       >
-        Try it free
+        Connect wallet
       </a>
     </div>
   </header>
@@ -83,27 +83,27 @@ const trustPoints = [
       <div class="relative mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-2">
         <div>
           <p class="inline-flex items-center gap-2 rounded-full bg-brand-100 px-4 py-1.5 text-xs font-bold text-brand-700">
-            Now in Nigeria &middot; free, no crypto needed
+            For Stellar wallet holders &middot; XLM &amp; USDC
           </p>
           <h1 class="mt-5 text-4xl font-extrabold leading-[1.1] text-stone-900 sm:text-5xl lg:text-[3.25rem]">
-            Pay every bill on time, even when payday doesn't line up.
+            Pay your Nigerian bills straight from your crypto wallet.
           </h1>
           <p class="mt-5 max-w-lg text-lg text-stone-600">
-            BillSteady shows you which bills are at risk before payday, then helps you save a little
-            each day so you're never caught short. No bank login. No crypto. No lending.
+            Connect your Stellar wallet, pick a bill &mdash; DisCo, rent, school fees, data &mdash; and pay
+            instantly in XLM or USDC. No off-ramp first, no middleman holding your funds.
           </p>
           <div class="mt-8 flex flex-wrap items-center gap-4">
             <a
               href={APP_URL}
               class="rounded-full bg-brand-600 px-7 py-3.5 text-base font-bold text-white shadow-soft transition-transform hover:bg-brand-700 active:scale-95"
             >
-              Try the planner &mdash; free
+              Connect your wallet
             </a>
             <a href="#how-it-works" class="text-base font-bold text-brand-700 hover:text-brand-800">
               See how it works &rarr;
             </a>
           </div>
-          <p class="mt-4 text-sm text-stone-500">No signup required to try the planner.</p>
+          <p class="mt-4 text-sm text-stone-500">Non-custodial. Your keys, your funds, always.</p>
         </div>
         <div class="relative">
           <PhoneMockup />
@@ -113,21 +113,24 @@ const trustPoints = [
 
     <!-- Problem -->
     <section class="mx-auto mt-24 max-w-4xl px-5 text-center sm:mt-32">
-      <h2 class="text-3xl font-extrabold text-stone-900 sm:text-4xl">Bills don't wait for payday.</h2>
+      <h2 class="text-3xl font-extrabold text-stone-900 sm:text-4xl">Your crypto is real money. Spending it shouldn't take three apps.</h2>
       <div class="mt-8 grid gap-6 text-left sm:grid-cols-2">
         <p class="rounded-2xl bg-white p-5 text-stone-600 shadow-sm">
-          Income is often irregular, or lands after the due date &mdash; but rent, school fees and DisCo bills
-          don't move.
+          Paying a Nigerian bill with crypto today usually means an exchange to off-ramp, a bank
+          transfer, then the actual bill payment &mdash; three apps, three delays, three places something
+          can go wrong.
         </p>
         <p class="rounded-2xl bg-white p-5 text-stone-600 shadow-sm">
-          A lump sum hurts far more than small daily amounts would, if only there were a plan to split it up.
+          Family abroad sending support home hit the same wall in reverse: stablecoins arrive in
+          seconds, but turning them into a paid light bill still takes days.
         </p>
         <p class="rounded-2xl bg-white p-5 text-stone-600 shadow-sm">
-          Naira savings lose value over time, and saving in dollars has felt out of reach for most people.
+          Most crypto bill-pay experiences ask you to hand over custody first &mdash; send us your funds,
+          trust us to pay on your behalf.
         </p>
         <p class="rounded-2xl bg-white p-5 text-stone-600 shadow-sm">
-          Apps that ask for a bank login feel risky &mdash; and when a bill can't be paid, most people don't
-          know how to ask for time.
+          The bill itself doesn't care how the money got there. It just needs to be paid, correctly,
+          on time, by you.
         </p>
       </div>
     </section>
@@ -137,7 +140,7 @@ const trustPoints = [
       <BlobBackdrop class="-left-52 top-20 h-[520px] w-[520px]" />
       <div class="relative text-center">
         <h2 class="text-3xl font-extrabold text-stone-900 sm:text-4xl">How BillSteady works</h2>
-        <p class="mx-auto mt-3 max-w-xl text-stone-600">Four steps. No spreadsheets, no guesswork.</p>
+        <p class="mx-auto mt-3 max-w-xl text-stone-600">Four steps. No off-ramp, no bank transfer, no waiting.</p>
       </div>
       <div class="relative mt-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
         {
@@ -154,10 +157,12 @@ const trustPoints = [
       </div>
       <div class="relative mt-16 grid items-center gap-10 lg:grid-cols-2">
         <div class="mx-auto w-full max-w-sm rounded-2xl bg-white p-8 shadow-soft">
-          <CalendarIllustration class="mx-auto h-48 w-48" />
+          <WalletIllustration class="mx-auto h-48 w-48" />
+          <p class="mt-4 text-center text-sm font-semibold text-brand-700">Your funds stay in your own wallet</p>
         </div>
         <div class="mx-auto w-full max-w-sm rounded-2xl bg-white p-8 shadow-soft">
-          <JarIllustration class="mx-auto h-48 w-48" />
+          <DirectPayIllustration class="mx-auto h-48 w-48" />
+          <p class="mt-4 text-center text-sm font-semibold text-brand-700">Paid straight to the biller, no custody in between</p>
         </div>
       </div>
     </section>
@@ -167,7 +172,7 @@ const trustPoints = [
       <div class="text-center">
         <h2 class="text-3xl font-extrabold text-stone-900 sm:text-4xl">Built so there's nothing to worry about</h2>
         <p class="mx-auto mt-3 max-w-xl text-stone-600">
-          BillSteady doesn't lend and doesn't create money. Every bill is paid from money you've actually saved.
+          BillSteady never custodies your crypto. Your wallet signs every payment &mdash; we just connect it to a real bill.
         </p>
       </div>
       <div class="mt-12 grid gap-6 sm:grid-cols-2">
@@ -191,15 +196,15 @@ const trustPoints = [
     <section class="relative mx-auto mt-24 max-w-5xl overflow-hidden rounded-[2.5rem] bg-brand-700 px-8 py-16 text-center sm:mt-32 sm:px-16">
       <BlobBackdrop class="-bottom-40 -right-40 h-[480px] w-[480px] opacity-30" />
       <div class="relative">
-        <h2 class="text-3xl font-extrabold text-white sm:text-4xl">Start planning your bills today</h2>
+        <h2 class="text-3xl font-extrabold text-white sm:text-4xl">Connect your wallet and pay your next bill</h2>
         <p class="mx-auto mt-4 max-w-md text-brand-100">
-          Free for the naira planner, forever. No signup, no bank login, no crypto required.
+          Works with XLM and USDC. Non-custodial, always. No signup beyond your wallet.
         </p>
         <a
           href={APP_URL}
           class="mt-8 inline-block rounded-full bg-sunrise-400 px-8 py-3.5 text-base font-bold text-stone-900 shadow-soft-sunrise transition-transform hover:bg-sunrise-500 active:scale-95"
         >
-          Try the planner &mdash; free
+          Connect your wallet
         </a>
       </div>
     </section>

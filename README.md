@@ -1,14 +1,23 @@
 # BillSteady Landing
 
-The public landing page for BillSteady — a bill planner for people short on
-cash in Nigeria (then Kenya, Ghana). Astro + Tailwind v4, deployed to Vercel.
+The public landing page for BillSteady — pay real Nigerian bills (DisCo,
+airtime, data, school fees) straight from a Stellar wallet, in XLM or
+USDC, non-custodially. Astro + Tailwind v4, deployed to Vercel.
 
 **Live:** https://billsteady-landing.vercel.app
 
 ## Status
 
-Shipped. One page: hero, problem, how-it-works, trust/safety points, CTA.
-~44KB total page weight. No backend, no forms, no tracking.
+As of 2026-11-08, this reflects a pivot from the original "naira bill
+planner, no crypto" product to a non-custodial Stellar/stablecoin bill-pay
+app — see [CLAUDE.md](CLAUDE.md) for why and what carries over (the
+non-custodial principle, the contracts repo's security model) versus what
+doesn't (the daily-savings planning concept, the existing app UI). The app
+itself (billsteady-web) has not been rebuilt to match yet — this page is
+ahead of the product on purpose, to validate the new positioning first.
+
+One page: hero, problem, how-it-works, trust/safety points, CTA. ~44KB
+total page weight. No backend, no forms, no tracking.
 
 The primary CTA currently links to the
 [billsteady-web](https://github.com/BillSteady/billsteady-web) GitHub repo —

@@ -1,45 +1,48 @@
 ---
 interface Props {
-  name: "no-lending" | "no-bank-login" | "no-crypto" | "daily-save";
+  name: "non-custodial" | "multi-asset" | "real-billers" | "diaspora";
   class?: string;
 }
 const { name, class: className = "h-7 w-7" } = Astro.props;
 ---
 
 {
-  name === "no-lending" && (
+  name === "non-custodial" && (
     <svg class={className} viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <circle cx="24" cy="24" r="20" stroke="var(--color-brand-700)" stroke-width="3" />
-      <path d="M16 20c0-3 3-5 6-5s6 2 6 5-3 4-6 5-6 2-6 5 3 5 6 5 6-2 6-5" stroke="var(--color-brand-700)" stroke-width="3" stroke-linecap="round" />
-      <line x1="12" y1="34" x2="36" y2="14" stroke="var(--color-sunrise-500)" stroke-width="3" stroke-linecap="round" />
+      <path d="M24 6l16 6v10c0 10-6.8 17.5-16 20-9.2-2.5-16-10-16-20V12l16-6z" stroke="var(--color-brand-700)" stroke-width="3" stroke-linejoin="round" />
+      <path d="M17 24l5 5 10-11" stroke="var(--color-sunrise-500)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
     </svg>
   )
 }
 {
-  name === "no-bank-login" && (
+  name === "multi-asset" && (
     <svg class={className} viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <rect x="12" y="21" width="24" height="18" rx="4" stroke="var(--color-brand-700)" stroke-width="3" />
-      <path d="M17 21v-5a7 7 0 0 1 14 0v5" stroke="var(--color-brand-700)" stroke-width="3" />
-      <circle cx="24" cy="28" r="2.5" fill="var(--color-brand-700)" />
-      <line x1="10" y1="36" x2="38" y2="10" stroke="var(--color-sunrise-500)" stroke-width="3" stroke-linecap="round" />
+      <circle cx="19" cy="20" r="13" fill="var(--color-brand-100)" stroke="var(--color-brand-700)" stroke-width="2.5" />
+      <text x="19" y="24" font-size="8" text-anchor="middle" fill="var(--color-brand-700)" font-weight="800">XLM</text>
+      <circle cx="31" cy="30" r="13" fill="var(--color-sunrise-100)" stroke="var(--color-sunrise-600)" stroke-width="2.5" />
+      <text x="31" y="34" font-size="6.5" text-anchor="middle" fill="var(--color-sunrise-600)" font-weight="800">USDC</text>
     </svg>
   )
 }
 {
-  name === "no-crypto" && (
+  name === "real-billers" && (
     <svg class={className} viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <circle cx="24" cy="24" r="20" stroke="var(--color-brand-700)" stroke-width="3" />
-      <text x="24" y="31" font-size="20" text-anchor="middle" fill="var(--color-brand-700)" font-weight="700">&#8358;</text>
+      <rect x="12" y="10" width="24" height="30" rx="3" stroke="var(--color-brand-700)" stroke-width="3" />
+      <rect x="17" y="16" width="5" height="5" fill="var(--color-brand-200)" />
+      <rect x="26" y="16" width="5" height="5" fill="var(--color-brand-200)" />
+      <rect x="17" y="25" width="5" height="5" fill="var(--color-brand-200)" />
+      <rect x="26" y="25" width="5" height="5" fill="var(--color-brand-200)" />
+      <rect x="20" y="34" width="8" height="6" fill="var(--color-brand-600)" />
+      <path d="M6 44c2-5 6-7 10-7" stroke="var(--color-sunrise-500)" stroke-width="2.5" stroke-linecap="round" />
     </svg>
   )
 }
 {
-  name === "daily-save" && (
+  name === "diaspora" && (
     <svg class={className} viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <path d="M10 38V18l14-10 14 10v20" stroke="var(--color-brand-700)" stroke-width="3" stroke-linejoin="round" />
-      <path d="M18 38V26h12v12" stroke="var(--color-brand-700)" stroke-width="3" stroke-linejoin="round" />
-      <circle cx="33" cy="15" r="7" fill="var(--color-sunrise-400)" stroke="var(--color-sunrise-600)" stroke-width="2" />
-      <path d="M30 15l2 2 4-4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      <circle cx="20" cy="22" r="14" stroke="var(--color-brand-700)" stroke-width="3" />
+      <path d="M6 22h28M20 8c3.5 4 5 8.5 5 14s-1.5 10-5 14c-3.5-4-5-8.5-5-14s1.5-10 5-14z" stroke="var(--color-brand-700)" stroke-width="2" />
+      <path d="M30 30l10 10M40 30v10h-10" stroke="var(--color-sunrise-500)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
     </svg>
   )
 }
